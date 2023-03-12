@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { PokeapiService } from './services/service/pokeapi.service';
-import { Pokemon } from './models/model/pokemon';
-
 
 @Component({
   selector: 'app-root',
@@ -9,13 +6,10 @@ import { Pokemon } from './models/model/pokemon';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ui-pokedex-angular';
 
-  constructor(private pokeapiService: PokeapiService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.pokeapiService.getPokemon(1)
-      .subscribe((data: Pokemon) => console.log(data));
   }
 
 }

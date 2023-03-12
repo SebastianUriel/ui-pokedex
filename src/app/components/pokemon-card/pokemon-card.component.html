@@ -1,0 +1,17 @@
+<div class="card" *ngIf="pokemon != undefined">
+    <div class="card-image">
+        <figure class="image is-4by4">
+            <img [src]="pokemonImg" [alt]="pokemon.name">
+        </figure>
+    </div>
+    <div class="card-content">
+        <div class="media">
+            <div class="media-content">
+                <p class="title is-8 m-0">{{pokemon.name}}</p>
+                <p class="tag is-6 mr-1" *ngFor="let type of pokemon.types">
+                    {{type.type.name}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
