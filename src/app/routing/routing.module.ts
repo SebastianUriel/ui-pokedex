@@ -60,104 +60,86 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'berries',
-    component: BerriesComponent,
-    children: [
-      { path: 'berry-firmnesses', component: BerryFirmnessesComponent },
-      { path: 'berry-flavors', component: BerryFlavorsComponent }
-    ]
+    component: BerriesComponent
   },
-  { 
-    path: 'contests', 
-    component: ContestsComponent,
-    children: [
-      { path: 'contest-type', component: ContestTypesComponent },
-      { path: 'contest-effect', component: ContestEffectsComponent },
-      { path: 'super-contest-effect', component: SuperContestEffectsComponent }
-    ]
+  { path: 'berries/berry-firmnesses', component: BerryFirmnessesComponent },
+  { path: 'berries/berry-flavors', component: BerryFlavorsComponent },
+  {
+    path: 'contests',
+    component: ContestsComponent
   },
-  { 
-    path: 'encounters', 
-    component: EncountersComponent,
-    children: [
-      { path: 'encounter-methods', component: EncounterMethodsComponent },
-      { path: 'encounter-conditions', component: EncounterConditionsComponent },
-      { path: 'encounter-condition-values', component: EncounterConditionValuesComponent }
-    ]
+  { path: 'contests/contest-type', component: ContestTypesComponent },
+  { path: 'contests/contest-effect', component: ContestEffectsComponent },
+  { path: 'contests/super-contest-effect', component: SuperContestEffectsComponent },
+  {
+    path: 'encounters',
+    component: EncountersComponent
   },
-  { 
-    path: 'evolution', 
-    component: EvolutionComponent,
-    children: [
-      { path: 'evolution-chains', component: EvolutionChainsComponent },
-      { path: 'evolution-triggers', component: EvolutionTriggersComponent }
-    ]
+  { path: 'encounters/encounter-methods', component: EncounterMethodsComponent },
+  { path: 'encounters/encounter-conditions', component: EncounterConditionsComponent },
+  { path: 'encounters/encounter-condition-values', component: EncounterConditionValuesComponent },
+  {
+    path: 'evolution',
+    component: EvolutionComponent
   },
-  { 
-    path: 'games', 
-    component: GamesComponent,
-    children: [
-      { path: 'generations', component: GenerationsComponent },
-      { path: 'pokedexes', component: PokedexesComponent },
-      { path: 'version', component: VersionComponent },
-      { path: 'version-groups', component: VersionGroupsComponent }
-    ] 
+  { path: 'evolution/evolution-chains', component: EvolutionChainsComponent },
+  { path: 'evolution/evolution-triggers', component: EvolutionTriggersComponent },
+  {
+    path: 'games',
+    component: GamesComponent
   },
-  { 
-    path: 'items', 
-    component: ItemsComponent,
-    children: [
-      { path: 'item-attributes', component: ItemAttributesComponent },
-      { path: 'item-categories', component: ItemCategoriesComponent },
-      { path: 'item-fling-effects', component: ItemFlingEffectsComponent },
-      { path: 'item-pockets', component: ItemPocketsComponent }
-    ] 
+  { path: 'games/generations', component: GenerationsComponent },
+  { path: 'games/pokedexes', component: PokedexesComponent },
+  { path: 'games/version', component: VersionComponent },
+  { path: 'games/version-groups', component: VersionGroupsComponent },
+  {
+    path: 'items',
+    component: ItemsComponent
   },
-  { 
-    path: 'locations', 
-    component: LocationsComponent,
-    children: [
-      { path: 'location-areas', component: LocationAreasComponent },
-      { path: 'pal-park-areas', component: PalParkAreasComponent },
-      { path: 'regions', component: RegionsComponent }
-    ]
+  { path: 'items/item-attributes', component: ItemAttributesComponent },
+  { path: 'items/item-categories', component: ItemCategoriesComponent },
+  { path: 'items/item-fling-effects', component: ItemFlingEffectsComponent },
+  { path: 'items/item-pockets', component: ItemPocketsComponent },
+  {
+    path: 'locations',
+    component: LocationsComponent
   },
-  { 
-    path: 'machines', 
-    component: MachinesComponent 
+  { path: 'locations/location-areas', component: LocationAreasComponent },
+  { path: 'locations/pal-park-areas', component: PalParkAreasComponent },
+  { path: 'locations/regions', component: RegionsComponent },
+  {
+    path: 'machines',
+    component: MachinesComponent
   },
-  { 
-    path: 'moves', 
-    component: MovesComponent,
-    children: [
-      { path: 'move-ailments', component: MoveAilmentsComponent },
-      { path: 'move-battle-styles', component: MoveBattleStylesComponent },
-      { path: 'move-categories', component: MoveCategoriesComponent },
-      { path: 'move-damage-classes', component: MoveDamageClassesComponent },
-      { path: 'move-learn-methods', component: MoveLearnMethodsComponent },
-      { path: 'move-targets', component: MoveTargetsComponent }
-    ] 
+  {
+    path: 'moves',
+    component: MovesComponent
   },
-  { 
-    path: 'pokemon', 
-    component: PokemonComponent,
-    children: [
-      { path: 'abilities', component: AbilitiesComponent },
-      { path: 'characteristics', component: CharacteristicsComponent },
-      { path: 'egg-groups', component: EggGroupsComponent },
-      { path: 'genders', component: GendersComponent },
-      { path: 'growth-rates', component: GrowthRatesComponent },
-      { path: 'natures', component: NaturesComponent },
-      { path: 'pokeathlon-stats', component: PokeathlonStatsComponent },
-      { path: 'pokemon-location-areas', component: PokemonLocationAreasComponent },
-      { path: 'pokemon-colors', component: PokemonColorsComponent },
-      { path: 'pokemon-forms', component: PokemonFormsComponent },
-      { path: 'pokemon-habitats', component: PokemonHabitatsComponent },
-      { path: 'pokemon-shapes', component: PokemonShapesComponent },
-      { path: 'pokemon-species', component: PokemonSpeciesComponent },
-      { path: 'stats', component: StatsComponent },
-      { path: 'types', component: TypesComponent }
-    ] 
-  }
+  { path: 'moves/move-ailments', component: MoveAilmentsComponent },
+  { path: 'moves/move-battle-styles', component: MoveBattleStylesComponent },
+  { path: 'moves/move-categories', component: MoveCategoriesComponent },
+  { path: 'moves/move-damage-classes', component: MoveDamageClassesComponent },
+  { path: 'moves/move-learn-methods', component: MoveLearnMethodsComponent },
+  { path: 'moves/move-targets', component: MoveTargetsComponent },
+  {
+    path: 'pokemon',
+    component: PokemonComponent
+  },
+  { path: 'pokemon/abilities', component: AbilitiesComponent },
+  { path: 'pokemon/characteristics', component: CharacteristicsComponent },
+  { path: 'pokemon/egg-groups', component: EggGroupsComponent },
+  { path: 'pokemon/genders', component: GendersComponent },
+  { path: 'pokemon/growth-rates', component: GrowthRatesComponent },
+  { path: 'pokemon/natures', component: NaturesComponent },
+  { path: 'pokemon/pokeathlon-stats', component: PokeathlonStatsComponent },
+  { path: 'pokemon/pokemon-location-areas', component: PokemonLocationAreasComponent },
+  { path: 'pokemon/pokemon-colors', component: PokemonColorsComponent },
+  { path: 'pokemon/pokemon-forms', component: PokemonFormsComponent },
+  { path: 'pokemon/pokemon-habitats', component: PokemonHabitatsComponent },
+  { path: 'pokemon/pokemon-shapes', component: PokemonShapesComponent },
+  { path: 'pokemon/pokemon-species', component: PokemonSpeciesComponent },
+  { path: 'stats', component: StatsComponent },
+  { path: 'types', component: TypesComponent }
 ];
 
 @NgModule({

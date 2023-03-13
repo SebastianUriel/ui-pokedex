@@ -54,6 +54,7 @@ import { PokemonShapesComponent } from './pokemon/pokemon-shapes/pokemon-shapes.
 import { PokemonSpeciesComponent } from './pokemon/pokemon-species/pokemon-species.component';
 import { StatsComponent } from './pokemon/stats/stats.component';
 import { TypesComponent } from './pokemon/types/types.component';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -112,7 +113,8 @@ import { TypesComponent } from './pokemon/types/types.component';
     TypesComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ComponentsModule
   ],
   exports: [
     BerriesComponent,

@@ -1,0 +1,10 @@
+<nav class="breadcrumb has-succeeds-separator test p-0 m-0" aria-label="breadcrumbs">
+    <ul>
+        <li *ngFor="let level of breadcrumb">
+            <a href="#" routerLink="{{level.path}}"><span class="mr-2"><i class="{{level.icon}}"></i></span>{{level.name}}</a>
+        </li>
+        <li class="is-active">
+            <a href="#" routerLink="{{lastBreadcrumb.path}}"><span class="mr-2"><i class="{{lastBreadcrumb.icon}}"></i></span>{{lastBreadcrumb.name}}</a>
+        </li>
+    </ul>
+</nav>

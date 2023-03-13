@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 
 
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     PokemonCardComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    BreadcrumbComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { RouterModule } from '@angular/router';
   exports: [
     PokemonCardComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    BreadcrumbComponent
   ]
 })
 export class ComponentsModule { }
