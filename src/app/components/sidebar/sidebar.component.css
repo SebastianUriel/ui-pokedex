@@ -1,34 +1,29 @@
-.menu-list li {
-    margin-bottom: 10px;
+.sidebar {
+    height: 100%;
+    overflow-y: auto;
+    background-color: #000000;
 }
 
-.menu-list li ul {
-    margin-left: 10px;
-}
-
-.menu-list li a {
+.option {
     display: flex;
     align-items: center;
     border-radius: 5px;
+    background-color: #000000;
+    color: #fff;
 }
 
-.menu-list li a.select {
+.selected-option {
     display: flex;
     align-items: center;
     border-radius: 5px;
-    background-color: #E5E5E5;
+    background-color: #fff;
+    color: #000000;
 }
 
-.menu-list li ul {
+.sublist {
     display: none;
 }
 
-.menu-list li ul.open {
+.displayed-sublist {
     display: block;
-}
-
-.sidebar {
-    height: 100%;
-    width: 100%;
-    overflow-y: auto;
 }

@@ -2,10 +2,20 @@
   <aside class="menu">
     <ul class="menu-list">
       <li class="m-2" *ngFor="let menu of sidebar_menu">
-        <a id="{{'tag_'.concat(menu.id)}}" routerLink="{{menu.path}}" (click)="showSubLevels(menu.id)"><span class="mr-2"><i class="{{menu.icon}}"></i></span>{{menu.name}}</a>
-        <ul id="{{menu.id}}" *ngIf="menu.sub_levels != null">
+        <a id="{{menu.id}}" class="option" routerLink="{{menu.path}}" (click)="displaySubLevels(menu.id)">
+          <span class="mr-2">
+            <i class="{{menu.icon}}"></i>
+          </span>
+          {{menu.name}}
+        </a>
+        <ul id="{{'sub_'.concat(menu.id)}}" class="sublist" *ngIf="menu.sub_levels != null">
           <li *ngFor="let sub_levels of menu.sub_levels">
-            <a id="{{'tag_'.concat(sub_levels.id)}}" routerLink="{{menu.path + sub_levels.path}}" (click)="selectSubLevels(sub_levels.id)"><span class="mr-2"><i class="{{sub_levels.icon}}"></i></span>{{sub_levels.name}}</a>
+            <a id="{{sub_levels.id}}" class="option" routerLink="{{menu.path + sub_levels.path}}" (click)="selectSubLevels(sub_levels.id)">
+              <span class="mr-2">
+                <i class="{{sub_levels.icon}}"></i>
+              </span>
+              {{sub_levels.name}}
+            </a>
           </li>
         </ul>
       </li>

@@ -10,64 +10,64 @@ export class SidebarComponent implements AfterViewInit {
 
   sidebar_menu?: any[];
 
-  constructor() { 
+  constructor() {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.sidebar_menu = new Menu().data;
   }
 
-  ngAfterViewInit() {
+  public ngAfterViewInit() {
     const currentPath = window.location.pathname.split('/');
     currentPath.shift();
-    if(currentPath[0].trim() !== '') {
-      this.showSubLevels(currentPath[0]);
+    if (currentPath[0].trim()) {
+      this.displaySubLevels(currentPath[0]);
       currentPath.shift();
-      for(let level of currentPath) {
+      for (let level of currentPath) {
         this.selectSubLevels(level);
       }
     } else {
-      this.showSubLevels('home');
+      this.displaySubLevels('home');
     }
   }
 
-  showSubLevels(id: string) {
-    this.resetShowSubLevels();
+  public displaySubLevels(id: string) {
+    this.resetDisplayedSublevels();
     this.resetSelectSubLevels();
-    if(id.trim() !== '') {
-      const mainTag = document.querySelector('#tag_'.concat(id));
-      mainTag?.classList.toggle('select');
-      const tag = document.querySelector('#'.concat(id));
-      tag?.classList.toggle('open');
+    if (id) {
+      const mainTag = document.querySelector('#'.concat(id));
+      mainTag?.setAttribute("class", "selected-option");
+      const tag = document.querySelector('#sub_'.concat(id));
+      tag?.setAttribute("class", "displayed-sublist");
     }
   }
 
-  selectSubLevels(id: string) {
+  public selectSubLevels(id: string) {
     this.resetSelectSubLevels();
-    if(id.trim() !== '') {
-      const mainTag = document.querySelector('#tag_'.concat(id));
-      mainTag?.classList.toggle('select');
+    if (id) {
+      const mainTag = document.querySelector('#'.concat(id));
+      mainTag?.setAttribute("class", "selected-option");
     }
   }
 
-  private resetShowSubLevels() {
-    if(this.sidebar_menu != null) {
-      for(let item of this.sidebar_menu) {
-        const mainTag = document.querySelector('#tag_'.concat(item.id));
-        mainTag?.classList.remove('select');
-        const tag = document.querySelector('#'.concat(item.id));
-        tag?.classList.remove('open');
+  private resetDisplayedSublevels() {
+    if (this.sidebar_menu) {
+      for (let item of this.sidebar_menu) {
+        const mainTag = document.querySelector('#'.concat(item.id));
+        mainTag?.setAttribute("class", "option");
+        const tag = document.querySelector('#sub_'.concat(item.id));
+        tag?.setAttribute("class", "sublist");
       }
     }
   }
 
   private resetSelectSubLevels() {
-    if(this.sidebar_menu != null) {
-      for(let item of this.sidebar_menu) {
-        if(item.sub_levels != null) {
-          for(let sub_level of item.sub_levels) {
-            const mainTag = document.querySelector('#tag_'.concat(sub_level.id));
-            mainTag?.classList.remove('select');
+    if (this.sidebar_menu) {
+      for (let item of this.sidebar_menu) {
+        if (item.sub_levels) {
+          for (let sub_level of item.sub_levels) {
+            const tag = document.querySelector('#'.concat(sub_level.id));
+            tag?.setAttribute("class", "option");
           }
         }
       }
